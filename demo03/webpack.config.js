@@ -1,3 +1,4 @@
+
 // babel-loader
 // loader 是预处理器，让webpack处理非js文件（JSX/ES6），在构建之前将所有的文件转换为webpack能够处理的有效模块
 // loader的两个目标
@@ -7,10 +8,13 @@
 
 // babel-loader 是一个将jsx、es6格式的文件转换为js文件的工具。
 
+const path = require('path');
+
 module.exports = {
   entry: './main.jsx',
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname,'')
   },
   module: { 
     rules: [
@@ -27,6 +31,7 @@ module.exports = {
     ]
   }
 };
+
 
 
 // main.js改成了react的jsx文件
